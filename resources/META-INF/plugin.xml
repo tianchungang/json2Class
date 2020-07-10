@@ -1,0 +1,39 @@
+<idea-plugin>
+  <name>generator-from-json</name>
+  <id>generator-java-from-json</id>
+  <version>1.01</version>
+  <vendor email="tom.tian@signify.com" url="https://www.signify.com.cn">signify</vendor>
+
+  <description>used to generator the class from the exists json </description>
+
+  <change-notes>used to generator the class from the exists json version 1.0</change-notes>
+
+  <depends>com.intellij.modules.java</depends>
+
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="JsonFileGenerator" class="com.ctx.lighting.JsonFileGeneratorAction" text="generatorFromJson"
+            description="JsonFileGeneratorAction"  >
+      <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="$LRU" anchor="after" />
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl K"/>
+    </action>
+
+
+  </actions>
+
+
+</idea-plugin>

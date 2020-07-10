@@ -1,0 +1,29 @@
+package ${packageName};
+
+import java.io.Serializable;
+#foreach($import in $imports)
+#if($import)
+import $import;
+#end
+#end
+
+
+
+public class ${entity.name} implements Serializable{
+
+#foreach($column in $entity.properties)
+    private $column.type $column.key;
+#end
+
+#foreach($column in $entity.properties)
+    public $column.type get${column.capitalKey}(){
+        return this.$column.key;
+    }
+
+    public void set${column.capitalKey}(${column.type} ${column.key}){
+        this.$column.key = $column.key;
+    }
+
+#end
+
+}
